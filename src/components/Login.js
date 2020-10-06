@@ -11,13 +11,14 @@ class Login extends Component {
             [name]: value,
         });
     }
-
+    
     handleSubmit(e) {
         e.preventDefault();
         let account = {
             username: this.state.username.toLowerCase(),
             password: this.state.password.toLowerCase()
         }
+        this.props.checkUser(account);
     }
 
     render() {
